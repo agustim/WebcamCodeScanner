@@ -1,12 +1,12 @@
 CC=g++
-ARCH=-arch x86_64
+ARCH=
 
 
 INCLUDE_FLAGS=-I/usr/local/include
-CFLAGS=-c -Wall $(INCLUDE_FLAGS)
+CFLAGS=-c -Wall -Wno-write-strings $(INCLUDE_FLAGS) 
 LDFLAGS= -L/usr/local/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lzbar
 
-SOURCES = main.cpp
+SOURCES = logger.cpp main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 
 EXECUTABLE=main
@@ -18,3 +18,6 @@ $(EXECUTABLE) : $(OBJECTS) Makefile
 
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm *.o $(EXECUTABLE)
