@@ -9,7 +9,7 @@ LDFLAGS= -L/usr/local/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lzbar
 SOURCES = logger.cpp main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 
-EXECUTABLE=main
+EXECUTABLE=wcs
 
 all : $(SOURCES) $(EXECUTABLE)
 
