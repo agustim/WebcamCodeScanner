@@ -16,8 +16,6 @@ int main(int argc, char* argv[])
 {
     VideoCapture cap(0); // open the video camera no. 0
 
-   // cap.set(CV_CAP_PROP_FRAME_WIDTH,800);
-   // cap.set(CV_CAP_PROP_FRAME_HEIGHT,640);
 
     if (!cap.isOpened())  // if not success, exit program
     {
@@ -55,23 +53,8 @@ int main(int argc, char* argv[])
         // extract results
         for(Image::SymbolIterator symbol = image.symbol_begin();  symbol != image.symbol_end();  ++symbol) {
           vector<Point> vp;
-          // do something useful with results
-          //cout << symbol->get_data() << endl;
           printf("%s\n", symbol->get_data().c_str());
-          //log_print(INFO_LOG, "%s", symbol->get_data().c_str());
           return 0;
-
-          int n = symbol->get_location_size();
-          for(int i=0;i<n;i++){
-                vp.push_back(Point(symbol->get_location_x(i),symbol->get_location_y(i)));
-          }
-          RotatedRect r = minAreaRect(vp);
-          Point2f pts[4];
-          r.points(pts);
-          for(int i=0;i<4;i++){
-            line(frame,pts[i],pts[(i+1)%4],Scalar(255,0,0),3);
-          }
-          log_print(INFO_LOG,"Angle: %d", r.angle);
         }
 
     }
