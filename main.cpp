@@ -2,9 +2,6 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <zbar.h>
 #include <iostream>
-#include "logger.h"
-
-#define DEBUG 0
 
 using namespace cv;
 using namespace std;
@@ -18,7 +15,7 @@ int main(int argc, char* argv[])
 
     if (!cap.isOpened())  // if not success, exit program
     {
-    	log_print(ERROR_LOG, "Cannot open the video cam");
+    	printf("Cannot open the video cam");
       return -1;
     }
 
@@ -34,7 +31,7 @@ int main(int argc, char* argv[])
 
          if (!bSuccess) //if not success, break loop
         {
-          log_print(ERROR_LOG, "Cannot read a frame from video stream");
+          printf("Cannot read a frame from video stream");
           break;
         }
 

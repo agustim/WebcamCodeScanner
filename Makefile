@@ -6,7 +6,7 @@ INCLUDE_FLAGS=-I/usr/local/include -I/usr/include
 CFLAGS=-c -Wall -Wno-write-strings $(INCLUDE_FLAGS)
 LDFLAGS= -L/usr/local/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lzbar
 
-SOURCES = logger.cpp main.cpp
+SOURCES=main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 
 EXECUTABLE=wcs
