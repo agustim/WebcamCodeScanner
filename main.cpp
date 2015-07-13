@@ -1,4 +1,4 @@
-#include <opencv2/videoio/videoio.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <zbar.h>
 #include <iostream>
@@ -10,7 +10,6 @@ using namespace cv;
 using namespace std;
 using namespace zbar;
 
-//g++ main.cpp /usr/local/include/ /usr/local/lib/ -lopencv_highgui.2.4.8 -lopencv_core.2.4.8
 
 int main(int argc, char* argv[])
 {
